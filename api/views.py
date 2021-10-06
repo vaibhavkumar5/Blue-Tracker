@@ -1,51 +1,67 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from rest_framework.decorators import api_view
 
 from .serializers import *
 from utility.apiresponse import *
+from rest_framework.authtoken.models import Token
 
-@api_view(['GET'])
-def Api_Overview(request):
-	api_urls = {
-		'Api Overview':'/',
-		'Get Current Month Budget':'/getcurrentmonthbudget/<str:username>/',
-		'Get Previous Month Budget':'/getpreviousmonthbudget/<str:username>/<int:no_of_months>/',
-		'Get Year Budget':'/getyearbudget/<str:username>/<int:year>/',
-	}
-	return Response(api_urls)
+class api_overview(APIView):
+	def get(self, request):
+		api_urls = {
+			'Api Overview':'/',
+			'Current Month Budget':'/current_month/',
+			'Last Month Budget':'/last_month/',
+			'Current Year Budget':'/current_year/',
+		}
+		return Response(api_urls)
 
-def Get_Current_Month_Budget_Object(username):
-	return MonthlyBudget.objects.filter(user=User.objects.get(username=username)).order_by('-id')[0]
+class current_month(APIView):
+	permission_classes = (IsAuthenticated,)
 
-@api_view(['GET'])
-def Get_Current_Month_Budget(request, username):
-	serializer = Monthly_Budget_Serializer
+	def get(self, request):
+		auth_token = request.headers['Authorization'].replace("Token ", "")
 
-	try:
-		queryset = Get_Current_Month_Budget_Object(username)
-		return ApiGetResponse(serializer, queryset, False)
-	except:
-		pass
-	return ApiGetResponse(serializer)
+		user = Token.objects.get(key=auth_token).user
 
-@api_view(['GET'])
-def Get_Previous_Month_Budget(request, username, no_of_months):
-	serializer = Monthly_Budget_Serializer
+		serializer = Monthly_Budget_Serializer
 
-	try:
-		queryset = MonthlyBudget.objects.filter(user=User.objects.get(username=username), year=Get_Current_Month_Budget_Object(username).year).order_by('-id')[1:no_of_months+1]
-		return ApiGetResponse(serializer, queryset)
-	except:
-		pass
-	return ApiGetResponse(serializer)
+		try:
+			queryset = Get_Current_Month_Budget_Object(user)
+			return ApiGetResponse(serializer, queryset, False)
+		except:
+			pass
+		return ApiGetResponse(serializer)
 
-@api_view(['GET'])
-def Get_Year_Budget(request, username, year):
-	serializer = Monthly_Budget_Serializer
+class last_month(APIView):
+	permission_classes = (IsAuthenticated,)
 
-	try:
-		queryset = MonthlyBudget.objects.filter(user=User.objects.get(username=username), year=year).order_by('id')
-		return ApiGetResponse(serializer, queryset)
-	except:
-		pass
-	return ApiGetResponse(serializer)
+	def get(self, request):
+		auth_token = request.headers['Authorization'].replace("Token ", "")
+
+		user = Token.objects.get(key=auth_token).user
+
+		serializer = Monthly_Budget_Serializer
+
+		try:
+			queryset = Get_Last_Month_Budget_Object(user)
+			return ApiGetResponse(serializer, queryset, False)
+		except:
+			pass
+		return ApiGetResponse(serializer)
+
+class current_year(APIView):
+	permission_classes = (IsAuthenticated,)
+
+	def get(self, request):
+		auth_token = request.headers['Authorization'].replace("Token ", "")
+
+		user = Token.objects.get(key=auth_token).user
+
+		serializer = Monthly_Budget_Serializer
+
+		try:
+			queryset = Get_Current_Year_Budget_Objects(user)
+			return ApiGetResponse(serializer, queryset)
+		except:
+			pass
+		return ApiGetResponse(serializer)

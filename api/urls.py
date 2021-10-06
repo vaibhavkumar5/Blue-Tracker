@@ -1,9 +1,17 @@
 from django.urls import path
 from .views import *
+from .authviews import *
+
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
-	path('', Api_Overview),
-	path('getcurrentmonthbudget/<str:username>/', Get_Current_Month_Budget),
-	path('getpreviousmonthbudget/<str:username>/<int:no_of_months>', Get_Previous_Month_Budget),
-	path('getyearbudget/<str:username>/<int:year>', Get_Year_Budget),
+	path('', api_overview.as_view()),
+
+	path('authorize/', Authorize.as_view()),
+    path('login/', obtain_auth_token),
+    path('logout/', log_out.as_view()),
+
+    path('current_month/', current_month.as_view()),
+    path('last_month/', last_month.as_view()),
+    path('current_year/', current_year.as_view()),
 ]
