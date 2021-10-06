@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: lato;
+}
+
+.heading {
+  justify-content: center;
+  text-align: center;
+  /* align-items: center; */
+  padding: 20px;
+}
+h1 {
+  color: rgb(116, 75, 75);
+  font-weight: bold;
+}
+.table_data {
+  background-image: url(/static/images/table_bg.jfif);
+
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+table {
+  width: 50%;
+  margin-top: 5rem;
+}
+table tr th {
+  border-collapse: collapse;
+  background-color: rgb(99, 99, 187);
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+table tr td {
+  padding: 10px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgb(218, 213, 213);
+}
+tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 800px) {
+  table {
+    width: 90%;
+  }
+}
