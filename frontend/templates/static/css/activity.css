@@ -1,0 +1,23 @@
+#body{
+	width: calc(100% - 40px);
+	padding: 20px;
+	background-color: var(--default-background);
+	color: var(--default-color);
+}
+
+#brief{ display: flex; flex-wrap: wrap; justify-content: center; }
+
+#brief > div{ flex: 1 1 160px; margin: 20px; padding: 10px 20px; color: white; }
+
+#income{ background: #0A81D1; }
+
+#savings{ background: #2E933C; }
+
+#total-spent{ background: #F13030; }
+
+#main{ display: flex; flex-wrap: wrap; justify-content: center; }
+
+#main > div{ flex: 1 1 500px; margin: 50px; }
+
+.list-item{ margin: 10px 0; padding: 10px; cursor: pointer; background: rgb(240, 240, 240); }
+.list-item:hover{ background: rgb(200, 200, 200); transition: 0.5s; }

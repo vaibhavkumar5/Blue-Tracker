@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: white;
+  font-family: lato, sans-serif;
+}
+
+.container {
+  background-color: rgb(99, 99, 187);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  height: 477px;
+}
+.content {
+  margin: 116px;
+}
+.content h1 {
+  color: white;
+  margin-bottom: 1rem;
+}
+.content a button {
+  background-color: rgb(99, 99, 187);
+  padding: 10px 25px;
+  border-radius: 5px;
+  border: 1px solid white;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.content p {
+  color: white;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+  font-weight: lighter;
+}
+
+.content a button:hover {
+  font-size: 13px;
+}
+.form_sheet {
+  z-index: 2;
+  height: 21rem;
+  width: 23rem;
+  background-color: white;
+  border-radius: 20px;
+  margin: 100px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+.form_details {
+  color: #333;
+  margin: 40px 30px;
+}
+.form_details h2 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.input_data input {
+  width: 150px;
+  font-size: 1rem;
+  margin-top: 1rem;
+  height: 25px;
+  width: 200px;
+  border: none;
+}
+.input_data input:focus {
+  border-bottom: 1px solid #333;
+  outline: none;
+}
+.form_details a button {
+  border: none;
+  margin-top: 2rem;
+  color: white;
+  background-color: rgb(99, 99, 187);
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.form_details a button:hover {
+  font-size: 13px;
+}
+.form_details a button:active {
+  color: rgb(230, 222, 222);
+}
+
+.container_2 {
+  z-index: 1;
+  position: relative;
+  bottom: 70px;
+  height: 500px;
+  width: 100%;
+  background-color: white;
+  transform: skewy(358deg);
+}
