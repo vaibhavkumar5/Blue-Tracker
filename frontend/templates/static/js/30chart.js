@@ -1,6 +1,6 @@
 var data = [12, 19, 3];
 var ctx = document.getElementById('my_Chart').getContext('2d');
-var myChart = new Chart(ctx, {
+var my_Chart = new Chart(ctx, {
  type: 'line' ,
     data: {
         labels: ['Savings', 'Expenses', 'Transaction'],
