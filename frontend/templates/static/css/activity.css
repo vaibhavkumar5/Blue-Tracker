@@ -1,5 +1,5 @@
 #body{
-	width: calc(100% - 40px);
+	width: 100%;
 	padding: 20px;
 	background-color: var(--default-background);
 	color: var(--default-color);
@@ -9,11 +9,11 @@
 
 #brief > div{ flex: 1 1 160px; margin: 20px; padding: 10px 20px; color: white; }
 
-#income{ background: #0A81D1; }
+#income-container{ background: #0A81D1; }
 
-#savings{ background: #2E933C; }
+#savings-container{ background: #2E933C; }
 
-#total-spent{ background: #F13030; }
+#spendings-container{ background: #F13030; }
 
 #main{ display: flex; flex-wrap: wrap; justify-content: center; }
 
@@ -21,3 +21,8 @@
 
 .list-item{ margin: 10px 0; padding: 10px; cursor: pointer; background: rgb(240, 240, 240); }
 .list-item:hover{ background: rgb(200, 200, 200); transition: 0.5s; }
+
+#new-expenditure{ padding-top: 50px; }
+#toggle-expenditure{ cursor: pointer; display: inline-flex; }
+
+form > input{ margin: 20px; padding: 10px 20px; border: 1px solid black; }
