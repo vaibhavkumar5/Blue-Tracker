@@ -12,7 +12,7 @@ class log_out(APIView):
 		logout(request)
 		return HttpResponse(status=200, content=b'Logged out')
 
-class Authorize(APIView):
+class authorize(APIView):
 	def post(self, request):
 		try:
 			username = request.data['username']

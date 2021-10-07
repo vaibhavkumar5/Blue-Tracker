@@ -1,3 +1,4 @@
+var user_name_containers = document.getElementsByClassName('user-name');
 var donut_chart_data = null;
 
 function get_current_month_data(){
@@ -24,8 +25,25 @@ function get_current_month_data(){
 		            ]
 		    },
 		    options: {}
-		});		
+		});
+		for (var i = 0; i < user_name_containers.length; i++) {
+			user_name_containers[i].innerHTML = response.data.user.username;
+		}
+		var income = response.data.income;
+		var spendings = response.data.expenses + response.data.transactions;
+		var savings = response.data.savings;
+
+		spendings = (spendings/income)*100;
+		spendings += "%";
+		savings = (savings/income)*100;
+		savings += "%";
+
+		document.getElementById("budget-spendings").innerHTML = spendings;
+		document.getElementById("budget-spendings").style.width = spendings;
+		document.getElementById("budget-savings").innerHTML = savings;
+		document.getElementById("budget-savings").style.width = savings;
 	})
-	.catch(function(error){ console.log(error); });
+	.catch(function(error){ console.log(error) });
+	// .catch(function(error){ delCookie('Authorization'); window.reload(); });
 }
 get_current_month_data();

@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from rest_framework.permissions import IsAuthenticated
 
 from database.models import MonthlyBudget
+from django.utils import timezone
 
 BASE_API_URL = 'https://bluetracker.herokuapp.com/api/'
 
@@ -24,6 +25,12 @@ def ApiPostResponse(serializer, request):
 	return Response(serializer.data)
 
 def Get_Current_Month_Budget_Object(user):
+	today = timezone.now().today()
+
+	if len(MonthlyBudget.objects.filter(user=user, month=today.month, year=today.year)) == 0:
+		MonthlyBudget(user=user, month=today.month, year=today.year).save()
+		return Get_Current_Month_Budget_Object(user)
+
 	return MonthlyBudget.objects.filter(user=user).order_by(*['-year', '-month'])[0]
 
 def Get_Last_Month_Budget_Object(user):
