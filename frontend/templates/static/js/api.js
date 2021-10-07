@@ -43,3 +43,19 @@ function authorize(username, email, password){
 	.then(function(response){ setCookie("Authorization", "Token "+response.data.token, 60); alert("logged in "+username); location.reload(); })
 	.catch(function(error){ alert(error); });
 }
+
+function logout(){
+    axios({
+        method: "get",
+        url: BASE_API_URL+"logout/",
+        headers: {"Authorization":authorization}
+    })
+    .then(function(response){
+        delCookie("Authorization");
+        alert("Logged out successfully");
+        window.reload();
+    })
+    .catch(function(error){window.reload();});
+}
+
+function show(m){alert(m);}
