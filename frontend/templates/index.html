@@ -9,7 +9,6 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
-
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
@@ -81,24 +80,44 @@
 
   <body>
     <div class="container py-4">
-      <h1>Welcome back, <span class="user-name"></span>!</h1>
+      <h1>Welcome back<span class="user-name"></span></h1>
       <p>This is your dashboard. It gives you an overview of everything.</p>
       <div class="row align-items-md-stretch" id="explore">
         <div class="col-md-4 pt-3">
-          <div class="h-100 p-3 text-white bg-success rounded-3">
+          <div class="h-100 p-3 rounded-3" id="budget-status">
             <h3>Budget Status</h3>
             <hr />
-            <h5 class="text-center">Good Progress, <span class="user-name"></span>!</h5>
+            <h5 class="text-center"><span id="month-progress"></span><span class="user-name"></span></h5>
             <p class="text-center pt-3">
-              You have spend 69% of your expected monthly budget, you still have
-              31% to go.
+              <table>
+                <tr>
+                  <td>Total Income</td>
+                  <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                  <td id="income"></td>
+                </tr>
+                <tr>
+                  <td>This Month's Goal</td>
+                  <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                  <td id="goal"></td>
+                </tr>
+                <tr>
+                  <td>Total Savings</td>
+                  <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                  <td id="savings"></td>
+                </tr>
+                <tr>
+                  <td>Goal Achieved</td>
+                  <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                  <td id="achieved"></td>
+                </tr>
+              </table>
             </p>
             <div class="pt-3 pb-4 text-center">
               <a href="#">
-                <button class="btn btn-outline-light" type="button">
+                <button class="btn btn-outline-dark" type="button">
                   Adjust Budget
-                </button></a
-              >
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -120,11 +139,9 @@
         </div>
         </div>
 
-
-
         <div class="col-md-4 pt-3">
           <div class="h-100 p-3 text-dark bg-light rounded-3">
-            <h2>Budget Status</h2>
+            <h2>Expenditure Status</h2>
             <hr />
             <p>Spendings</p>
             <div class="progress">
@@ -197,6 +214,5 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/static/js/api.js"></script>
     <script src="/static/js/index.js"></script>
-    <script src="/static/js/30chart.js"></script>
   </body>
 </html>
