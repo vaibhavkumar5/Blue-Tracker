@@ -3,3 +3,4 @@ from .models import *
 
 admin.site.register(MonthlyBudget)
 admin.site.register(Transaction)
+admin.site.register(Expense)

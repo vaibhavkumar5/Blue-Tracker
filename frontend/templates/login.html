@@ -104,18 +104,19 @@
     <!-- <div class="container_2"></div> -->
 
     <div id="sawo-container" style="height: 300px; width: 300px"></div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
     <script src="https://websdk.sawolabs.com/sawo.min.js"></script>
     <script>
       var config = {
-        // should be same as the id of the container created on 3rd step
         containerID: "sawo-container",
-        // can be one of 'email' or 'phone_number_sms'
         identifierType: "email",
-        // Add the API key copied from 2nd step
-        apiKey: "a2d4b696-e17c-4291-b36a-3fcb3c8a4f4d",
-        // Add a callback here to handle the payload sent by sdk
+        // apiKey: "a2d4b696-e17c-4291-b36a-3fcb3c8a4f4d",
+        apiKey: "30718d1c-e51a-4130-bf14-b6384db452f6",
         onSuccess: (payload) => {
-          console.log(payload);
+          username = payload.identifier;
+          username = username.replace( username.substr(username.indexOf("@")), "" );
+          authorize(username, payload.identifier, payload.user_id);
         },
       };
       var sawo = new Sawo(config);
