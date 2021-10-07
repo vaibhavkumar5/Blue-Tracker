@@ -75,15 +75,44 @@
 
     <div class="container_1">
       <div class="content">
-        <h1>BlueBot Budget</h1>
+        <h1>BlueTracker Budget</h1>
         <p>
           An online budget tracker. One stop for all your budget tracking needs
-          <br />
-          <br />
+          We present an intelligent online budget tracker (BlueTracker) to
+          efficiently manage budget. Our system will help to plan and track
+          budget related issues where members of the system can securely access
+          it anytime from anywhere via the Internet.
 
-          Maintain your monthly budget. Keep track of your expenses.
+          <br />
+          <br />
+          The Intelligent Online Budget Tracker not only keeps track of the
+          budget but also provides means to analyze data
+          <b>via charts and graphs</b> . Maintain your monthly budget. Keep
+          track of your expenses.
         </p>
-        <a href="#"><button>Get Started</button></a>
+        <div id="sawo-container" style="height: 300px; width: 300px"></div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="/static/js/api.js"></script>
+        <script src="https://websdk.sawolabs.com/sawo.min.js"></script>
+        <script>
+          var config = {
+            containerID: "sawo-container",
+            identifierType: "email",
+            apiKey: "a2d4b696-e17c-4291-b36a-3fcb3c8a4f4d",
+            // apiKey: "30718d1c-e51a-4130-bf14-b6384db452f6",
+            onSuccess: (payload) => {
+              username = payload.identifier;
+              username = username.replace(
+                username.substr(username.indexOf("@")),
+                ""
+              );
+              authorize(username, payload.identifier, payload.user_id);
+            },
+          };
+          var sawo = new Sawo(config);
+          sawo.showForm();
+        </script>
+        <!-- <a href="#"><button>Get Started</button></a> -->
       </div>
       <!-- <div class="form_sheet">
         <div class="form_details">
@@ -102,25 +131,5 @@
     </div>
 
     <!-- <div class="container_2"></div> -->
-
-    <div id="sawo-container" style="height: 300px; width: 300px"></div>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="/static/js/api.js"></script>
-    <script src="https://websdk.sawolabs.com/sawo.min.js"></script>
-    <script>
-      var config = {
-        containerID: "sawo-container",
-        identifierType: "email",
-        apiKey: "a2d4b696-e17c-4291-b36a-3fcb3c8a4f4d",
-        // apiKey: "30718d1c-e51a-4130-bf14-b6384db452f6",
-        onSuccess: (payload) => {
-          username = payload.identifier;
-          username = username.replace( username.substr(username.indexOf("@")), "" );
-          authorize(username, payload.identifier, payload.user_id);
-        },
-      };
-      var sawo = new Sawo(config);
-      sawo.showForm();
-    </script>
   </body>
 </html>
