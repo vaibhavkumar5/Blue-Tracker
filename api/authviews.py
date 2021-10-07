@@ -15,21 +15,21 @@ class log_out(APIView):
 class Authorize(APIView):
 	def post(self, request):
 		try:
-			username = request.POST['username']
-			password = request.POST['password']
-			email = request.POST['email']
+			username = request.data['username']
+			password = request.data['password']
+			email = request.data['email']
 		except:
 			return HttpResponse(status=400, content=b'Bad Request')
 
 		try:
 			user = User.objects.get(username=username, email=email)
+			print('user retrieved')
 		except:
 			try:
 				user = User.objects.create_user(username=username, password=password, email=email)
 				user.save()
 			except:
 				return HttpResponse(status=409, content=b'Username already exists')
-
 
 		authorization_response = post(url=BASE_API_URL+'login/', data={'username':username, 'password':password})
 		return HttpResponse(status=authorization_response.status_code, content=authorization_response.content)
