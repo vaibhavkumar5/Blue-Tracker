@@ -9,23 +9,24 @@ body {
   font-family: lato, sans-serif;
 }
 
-.container {
-  background-color: rgb(99, 99, 187);
+.container_1 {
+  background-color: #0a81d1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   height: 477px;
-  /* margin: -30px; */
+  width: 100%;
 }
 .content {
-  margin: 116px;
+  margin: 50px;
 }
 .content h1 {
+  font-size: 3.5rem;
   color: white;
   margin-bottom: 1rem;
 }
 .content a button {
-  background-color: rgb(99, 99, 187);
+  background-color: #0a81d1;
   padding: 10px 25px;
   border-radius: 5px;
   border: 1px solid white;
@@ -98,6 +99,21 @@ body {
   background-color: white;
   transform: skewy(358deg);
 }
-.form_wrapper {
-  border-radius: 30px;
+img {
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  img {
+    height: 70%;
+  }
+  .content h1 {
+    font-size: 2rem;
+  }
+  .content {
+    margin: 20px;
+  }
+}
+
+@media (max-width: 500px) {
 }
