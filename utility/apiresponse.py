@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 
 from database.models import MonthlyBudget
 
-BASE_API_URL = 'https://bluetracker.herokuapp.com//api/'
+BASE_API_URL = 'https://bluetracker.herokuapp.com/api/'
 
 def ApiGetResponse(serializer, queryset=[], many=True):
 	serializer = serializer(queryset, many=many)
