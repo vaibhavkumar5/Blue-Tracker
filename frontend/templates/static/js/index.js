@@ -43,7 +43,6 @@ function get_current_month_data(){
 		document.getElementById("budget-savings").innerHTML = savings;
 		document.getElementById("budget-savings").style.width = savings;
 	})
-	.catch(function(error){ console.log(error) });
-	// .catch(function(error){ delCookie('Authorization'); window.reload(); });
+	.catch(function(error){ delCookie('Authorization'); window.reload(); });
 }
 get_current_month_data();
