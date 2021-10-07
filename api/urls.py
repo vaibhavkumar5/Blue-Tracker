@@ -14,4 +14,10 @@ urlpatterns = [
     path('current_month/', current_month.as_view()),
     path('last_month/', last_month.as_view()),
     path('current_year/', current_year.as_view()),
+
+    path('current_month_transaction/', current_month_transaction.as_view()),
+    path('last_month_transaction/', last_month_transaction.as_view()),
+
+    path('current_month_expense/', current_month_expense.as_view()),
+    path('last_month_expense/', last_month_expense.as_view()),
 ]

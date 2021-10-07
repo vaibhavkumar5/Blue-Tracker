@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from rest_framework.permissions import IsAuthenticated
 
 from database.models import MonthlyBudget
+from rest_framework.authtoken.models import Token
 from django.utils import timezone
 
 BASE_API_URL = 'https://bluetracker.herokuapp.com/api/'
@@ -39,3 +40,6 @@ def Get_Last_Month_Budget_Object(user):
 def Get_Current_Year_Budget_Objects(user):
 	current_month_object = Get_Current_Month_Budget_Object(user)
 	return MonthlyBudget.objects.filter(user=user, year=current_month_object.year).order_by('-month')
+
+def Get_User_By_Auth_Token(request):
+	return Token.objects.get(key=request.headers['Authorization'].replace("Token ", "")).user

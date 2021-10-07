@@ -17,8 +17,11 @@ class MonthlyBudget(models.Model):
 
 	savings = models.IntegerField(default=0)
 
+	savings_index = models.IntegerField(default=0)
+
 	def Update_Savings(self):
 		self.savings = self.income - ( self.expenses + self.transactions )
+		self.savings_index = (self.savings * self.income) / (self.goal * self.goal) if self.goal > 0 else 0
 
 	def save(self, *args, **kwargs):
 		self.Update_Savings()
