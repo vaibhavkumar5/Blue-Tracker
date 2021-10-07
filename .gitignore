@@ -1,2 +1,4 @@
 db.sqlite3
 media
+frontend/templates/static/js/api
+frontend/templates/testing.html
