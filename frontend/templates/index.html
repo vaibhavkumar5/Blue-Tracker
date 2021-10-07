@@ -19,14 +19,8 @@
 
     <title>BlueTracker</title>
   </head>
-  
-
   <body>
-    <button onclick="logout();">Log Out</button>
     <div class="container py-4">
-      
-       <!-- Nav -->
-
     <nav class="
 		navbar navbar-expand-lg navbar-light
 		bg-white
@@ -44,17 +38,20 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">Profile</a>
+              <a class="nav-link" href="/">Dashboard</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Activity</a>
+              <a class="nav-link" href="/profile">Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Leaderboard</a>
+              <a class="nav-link" href="/activity">Activity</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/leaderboard">Leaderboard</a>
             </li>
           </ul>
           <div class="ms-auto">
-            <button class="btn btn-outline-primary" type="submit">Logout</button>
+            <button class="btn btn-outline-primary" type="submit" onclick="logout();">Logout</button>
           </div>
           
         </div>
@@ -63,12 +60,12 @@
 
     <!-- Nav end -->
       
-      <h1> <span class="text-primary">Welcome back,</span> <span class="user-name"></span></h1>
+      <h1> <span class="text-primary">Welcome back</span><span class="user-name"></span></h1>
       <p class="text-secondary">This is your dashboard. It gives you an overview of everything.</p>
       <div class="row align-items-md-stretch" id="explore">
         <div class="col-md-4 pt-3">
           <div class="h-100 p-3 rounded-3" id="budget-status">
-            <h3>Budget Status</h3>
+            <h3>Monthly Budget Status</h3>
             <hr />
             <h5 class="text-center"><span id="month-progress"></span><span class="user-name"></span></h5>
             <p class="text-center pt-3">
@@ -148,12 +145,12 @@
             </div>
 
             <div class="p-4 text-center">
-              <a href="#">
+              <a href="/activity">
                 <button
                   class="btn btn-success text-light btn-outline-success mx-2"
                   type="button"
                 >
-                  Activity
+                  Detailed Expenditure Activity
                 </button></a
               >
      

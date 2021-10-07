@@ -40,7 +40,7 @@ function authorize(username, email, password){
 		url: BASE_API_URL+"authorize/",
 		data: {username:username, email:email, password:password}
 	})
-	.then(function(response){ setCookie("Authorization", "Token "+response.data.token, 60); alert("logged in "+username); location.reload(); })
+	.then(function(response){ setCookie("Authorization", "Token "+response.data.token, 60); alert("Logged in successfully as "+username); location.reload(); })
 	.catch(function(error){ alert(error); });
 }
 
