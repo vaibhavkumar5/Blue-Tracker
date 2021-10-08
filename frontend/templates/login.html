@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/static/images/favicon.ico"
+    />
     <link rel="stylesheet" href="/static/css/login.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
@@ -32,7 +36,7 @@
           <b>via charts and graphs</b> . Maintain your monthly budget. Keep
           track of your expenses.
         </p>
-        <div id="sawo-container" style="height: 300px; width: 300px"></div>
+        <!-- <div id="sawo-container" style="height: 300px; width: 300px"></div>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="/static/js/api.js"></script>
         <script src="https://websdk.sawolabs.com/sawo.min.js"></script>
@@ -53,9 +57,89 @@
           };
           var sawo = new Sawo(config);
           sawo.showForm();
+        </script> -->
+        <div id="sawo-container" style="height: 300px; width: 300px"></div>
+        <script src="https://websdk.sawolabs.com/sawo.min.js"></script>
+        <script>
+          var config = {
+            // should be same as the id of the container created on 3rd step
+            containerID: "sawo-container",
+            // can be one of 'email' or 'phone_number_sms'
+            identifierType: "email",
+            // Add the API key copied from 2nd step
+            apiKey: "4549d2a3-77a5-4585-a6bf-df681240c7de",
+            // new api login Code LT
+            // Add a callback here to handle the payload sent by sdk
+            onSuccess: (payload) => {
+              console.log(payload);
+            },
+          };
+          var sawo = new Sawo(config);
+          sawo.showForm();
         </script>
       </div>
       <img src="/static/images/ui-design.png" alt="" />
+    </div>
+
+    <div class="wrapper">
+      <h1>Our Team</h1>
+      <div class="team">
+        <div class="team_member">
+          <div class="team_img">
+            <img
+              src="/static/images/WhatsApp Image 2021-10-08 at 12.52.58.jpeg"
+              alt="Team_image"
+            />
+          </div>
+          <h3>Ayush Verma</h3>
+          <p class="role">Full Stack Developer</p>
+          <p>
+            Full Stack Web Developer
+            <br />
+            Django | Rest API | React JS | PHP
+          </p>
+        </div>
+        <div class="team_member">
+          <div class="team_img">
+            <img
+              src="/static/images/WhatsApp Image 2021-10-08 at 13.22.21.jpeg"
+              alt="Team_image"
+            />
+          </div>
+          <h3>Udit Katyal</h3>
+          <p class="role">Frontend and UI Developer</p>
+          <p>
+            Frontend Web Developer
+            <br />
+            Learner | C++ | Web Development | Gwoc@21 | Open-Source | Blogger
+          </p>
+        </div>
+        <div class="team_member">
+          <div class="team_img">
+            <img
+              src="/static/images/WhatsApp Image 2021-10-08 at 13.09.47.jpeg"
+              alt="Team_image"
+            />
+          </div>
+          <h3>Vaibhav Kumar</h3>
+          <p class="role">Frontend and API Tester</p>
+          <p>
+            Strong in design and integration with intuitive problem-solving
+            skills. Proficient in JAVA, HTML, CSS, and JAVASCRIPT.
+          </p>
+        </div>
+        <div class="team_member">
+          <div class="team_img">
+            <img
+              src="/static/images/WhatsApp Image 2021-10-08 at 12.41.56.jpeg"
+              alt="Team_image"
+            />
+          </div>
+          <h3>Amrit Thakkar</h3>
+          <p class="role">Team Lead (Frontend Developer)</p>
+          <p>Team Lead | Core Coder | JS Enthusiast</p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
