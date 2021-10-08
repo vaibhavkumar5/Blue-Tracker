@@ -76,7 +76,7 @@ function get_last_month_data(){
 		var transactions = response.data.transactions;
 		create_pie_chart("last_month", savings, expenses, transactions);
 	})
-	.catch(function(error){ delCookie('Authorization'); location.reload(); });
+	.catch(function(error){ alert("Couldn't retrieve data for last month"); });
 }
 get_last_month_data();
 

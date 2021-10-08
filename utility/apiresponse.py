@@ -30,7 +30,7 @@ def Get_Current_Month_Budget_Object(user):
 
 	if len(MonthlyBudget.objects.filter(user=user, month=today.month, year=today.year)) == 0:
 		month = MonthlyBudget(user=user, month=today.month, year=today.year).save()
-		return month #Get_Current_Month_Budget_Object(user)
+		return month
 
 	return MonthlyBudget.objects.filter(user=user).order_by(*['-year', '-month'])[0]
 
