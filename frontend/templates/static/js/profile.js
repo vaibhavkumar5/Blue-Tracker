@@ -131,6 +131,5 @@ function update_profile(){
         alert("Profile Updated");
         location.reload();
     })
-    .catch(function(error){ console.log(error); });
-    // .catch(function(error){ delCookie('Authorization'); location.reload(); });
+    .catch(function(error){ delCookie('Authorization'); location.reload(); });
 }
