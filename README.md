@@ -46,12 +46,13 @@ The flow of the website is as follows
 [Link to the Video Demonstration of the BlueBots Website](https://drive.google.com/file/d/17CK1sKKSy6RjRmJ22WGyapVqQ6JMRkWM/view?usp=sharing "Video Demonstration")
 
 ## Screenshots
-![](images/Screenshot%202021-09-05%20at%205.35.23%20PM.png)
-![](images/Screenshot%202021-09-05%20at%205.35.37%20PM.png)
-![](images/Screenshot%202021-09-05%20at%205.35.51%20PM.png)
-![](images/Screenshot%202021-09-05%20at%205.35.57%20PM.png)
-![](images/Screenshot%202021-09-05%20at%205.36.07%20PM.png)
-![](images/Screenshot%202021-09-05%20at%205.36.12%20PM.png)
-![](images/Screenshot%202021-09-05%20at%205.36.25%20PM.png)
-![](images/Screenshot%202021-09-05%20at%205.36.45%20PM.png)
+![](frontend/templates/static/images/Demo%201.jpeg)
+![](frontend/templates/static/images/demo2.jpeg)
+![](frontend/templates/static/images/demo3.jpeg)
+![](frontend/templates/static/images/demo4.jpeg)
+![](frontend/templates/static/images/demo5.jpeg)
+![](frontend/templates/static/images/demo6.jpeg)
+![](frontend/templates/static/images/demo7.jpeg)
+![](frontend/templates/static/images/demo8.jpeg)
+![](frontend/templates/static/images/demo%209.jpeg)
 
