@@ -10,11 +10,11 @@ An online budget tracker. One stop for all your budget tracking needs We present
 The Intelligent Online Budget Tracker not only keeps track of the budget but also provides means to analyze data via charts and graphs . Maintain your monthly budget. Keep track of your expenses.
 
 The flow of the website is as follows 
-1. choose which skill you want to learn Frontend / backend / React
-2. Study the detailed roadmap 
-3. check the video resources for step by step guide 
-4. track your progress on "progress tracker"
-5. Refer the documentation for quick revision 
+1. Login using SAWO Labs
+2. Set goal and budget 
+3. Track expenses 
+4. Get a detailed view of your budget, spendings and savings
+5. Save more and hit your target to earn bluecoin (BLC) based on polygon and get them in your crypto wallet
 
 # Tech Stack Used
 
@@ -29,14 +29,14 @@ The flow of the website is as follows
 # Installation
 
 > Workflow in terminal
-- Clone the git repository `git clone https://github.com/ayush02av/bluebots.git`
-- CD into project folder `cd bluebots`
+- Clone the git repository `git clone https://github.com/vaibhavkumar5/Blue-Tracker.git`
+- CD into project folder `cd Blue-Tracker`
 - Boot up VS Code `code .`
 - Start deployment server using `Live Server` extension in VS Code
 
 ## App/Web link if hosted (recommended but optional)
 
-[Link to the Bluebots Project website](https://bluetracker.herokuapp.com/login/ "BlueBots")
+[Link to the Bluebots Project website](https://bluetracker.herokuapp.com/login/ "BlueTracker")
 
 ## Video Demo
 
