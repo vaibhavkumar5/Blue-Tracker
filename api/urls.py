@@ -20,4 +20,6 @@ urlpatterns = [
 
     path('current_month_expense/', current_month_expense.as_view()),
     path('last_month_expense/', last_month_expense.as_view()),
+
+    path('leaderboard/', leaderboard.as_view()),
 ]

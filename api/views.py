@@ -138,3 +138,17 @@ class last_month_expense(APIView):
 			return ApiGetResponse(serializer, queryset)
 		except:
 			return HttpResponse(status=500, content=b'Internal Server Error')
+
+class leaderboard(APIView):
+	permission_classes = (IsAuthenticated,)
+
+	def get(self, request):
+		serializer = Leaderboard_Monthly_Budget_Serializer
+		user = Get_User_By_Auth_Token(request)
+
+		try:
+			current_month_object = Get_Current_Month_Budget_Object(user)
+			queryset = MonthlyBudget.objects.filter(month=current_month_object.month, year=current_month_object.year).order_by('-savings_index')
+			return ApiGetResponse(serializer, queryset)
+		except:
+			return HttpResponse(status=500, content=b'Internal Server Error')

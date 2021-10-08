@@ -18,6 +18,12 @@ class New_Monthly_Budget_Serializer(serializers.ModelSerializer):
 		model = MonthlyBudget
 		fields = ("id", "income", "goal")
 
+class Leaderboard_Monthly_Budget_Serializer(serializers.ModelSerializer):
+	user = User_Serializer(many=False)
+	class Meta(object):
+		model = MonthlyBudget
+		fields = ("savings_index", "user")	
+
 class Transaction_Budget_Serializer(serializers.ModelSerializer):
 	month_budget_connected = Monthly_Budget_Serializer(many=False)
 	class Meta(object):
