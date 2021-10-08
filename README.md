@@ -22,6 +22,9 @@ The flow of the website is as follows
 - CSS (design)
 - Bootstrap (CSS library)
 - JS DOM & jQuery (element manipulation and data insertion)
+- Django web framework for backend/database
+- rest framework for api
+- chart.js
 - SAWO Labs Api 
 - Solidity
 - Polygon Blockchain
