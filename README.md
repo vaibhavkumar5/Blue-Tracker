@@ -37,7 +37,7 @@ The flow of the website is as follows
 - Boot up VS Code `code .`
 - Start deployment server using `Live Server` extension in VS Code
 
-## App/Web link if hosted (recommended but optional)
+## Web link hosted
 
 [Link to the Bluebots Project website](https://bluetracker.herokuapp.com/login/ "BlueTracker")
 
