@@ -43,7 +43,7 @@ The flow of the website is as follows
 
 ## Video Demo
 
-[Link to the Video Demonstration of the BlueBots Website](https://drive.google.com/file/d/17CK1sKKSy6RjRmJ22WGyapVqQ6JMRkWM/view?usp=sharing "Video Demonstration")
+[Link to the Video Demonstration of the BlueTracker Website](https://drive.google.com/file/d/1GyxKwlqJo-OzesmdfIyf6msBuffL0Fhc/view?usp=drivesdk "Video Demonstration")
 
 ## Screenshots
 ![](frontend/templates/static/images/Demo%201.jpeg)
