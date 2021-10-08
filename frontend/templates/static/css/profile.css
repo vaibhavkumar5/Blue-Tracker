@@ -1,0 +1,18 @@
+#body{
+	width: 100%;
+	padding: 20px;
+	background-color: var(--default-background);
+	color: var(--default-color);
+}
+
+#main{ margin-top: 20px; }
+
+table tr{ cursor: pointer; background: rgb(240, 240, 240); }
+table tr td{ padding: 10px; }
+table tr td:nth-child(2){ padding: 0 10vw; }
+
+input{ width: 20vw; }
+
+button{ padding: 20px; border: 1px solid black; }
+
+#months-graph{ height: 200px; }

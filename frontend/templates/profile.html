@@ -1,0 +1,120 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>My Profile | BlueTracker</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/profile.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container py-4">
+	<nav class="
+		navbar navbar-expand-lg navbar-light
+		bg-white
+		border-bottom
+		pb-3
+		mb-4
+		sticky-top
+		">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Blue<span class="text-primary">Tracker</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/activity">Activity</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/leaderboard">Leaderboard</a>
+            </li>
+          </ul>
+          <div class="ms-auto">
+            <button class="btn btn-outline-primary" type="submit" onclick="logout();">Logout</button>
+          </div>
+          
+        </div>
+      </div>
+    </nav>
+	<div id="root">
+		<div id="body">
+			<span class="heading">Profile</span>
+			<span class="sub-heading" id="user-name"></span>
+			<span class="sub-heading">Current Month of <span id="month"></span></span>
+			<span class="text">You can change this month's income & goal by chaning the value, and submit.</span>
+			<div id="main">
+				<table class="sub-heading">
+          <tr>
+            <td>Total Income</td>
+            <td>:</td>
+            <td><input type="number" name="income" id="income"></td>
+          </tr>
+          <tr>
+            <td>This Month's Goal</td>
+            <td>:</td>
+            <td><input type="number" name="goal" id="goal"></td>
+          </tr>
+          <tr>
+          	<td>Expenses</td>
+            <td>:</td>
+            <td id="expenses"></td>
+          </tr>
+          <tr>
+          	<td>Transactions</td>
+            <td>:</td>
+            <td id="transactions"></td>
+          </tr>
+          <tr>
+            <td>Total Spendings</td>
+            <td>:</td>
+            <td id="spendings"></td>
+          </tr>
+          <tr>
+            <td>Total Savings</td>
+            <td>:</td>
+            <td id="savings"></td>
+          </tr>
+          <tr>
+            <td>Goal Achieved</td>
+            <td>:</td>
+            <td id="achieved"></td>
+          </tr>
+          <tr>
+            <td>Savings Index</td>
+            <td>:</td>
+            <td id="index"></td>
+          </tr>
+        </table>
+        <br>
+        <button onclick="update_profile();">Update Income & Goal</button>
+			</div>
+		</div>
+		<span class="sub-heading">This Month's Graph</span>
+		<canvas id="current_month" style="height: 300px;"></canvas>
+		<span class="sub-heading">Last Month's Graph</span>
+		<canvas id="last_month" style="height: 300px;"></canvas>
+		<span class="sub-heading">Whole Year Activity Graph</span>
+		<canvas id="year_activity" style="width: 100%;"></canvas>
+	</div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/static/js/api.js"></script>
+	<script type="text/javascript" src="/static/js/profile.js"></script>
+</body>
+</html>

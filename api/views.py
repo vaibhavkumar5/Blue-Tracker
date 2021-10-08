@@ -27,6 +27,16 @@ class current_month(APIView):
 		except:
 			return HttpResponse(status=500, content=b'Internal Server Error')
 
+	def put(self, request):
+		serializer = New_Monthly_Budget_Serializer
+		user = Get_User_By_Auth_Token(request)
+
+		try:
+			instance = Get_Current_Month_Budget_Object(user)
+			return ApiUpdateResponse(serializer, request, instance)
+		except:
+			return HttpResponse(status=500, content=b'Internal Server Error')
+
 class last_month(APIView):
 	permission_classes = (IsAuthenticated,)
 

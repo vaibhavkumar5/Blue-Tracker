@@ -13,6 +13,11 @@ class Monthly_Budget_Serializer(serializers.ModelSerializer):
 		model = MonthlyBudget
 		fields = "__all__"
 
+class New_Monthly_Budget_Serializer(serializers.ModelSerializer):
+	class Meta(object):
+		model = MonthlyBudget
+		fields = ("id", "income", "goal")
+
 class Transaction_Budget_Serializer(serializers.ModelSerializer):
 	month_budget_connected = Monthly_Budget_Serializer(many=False)
 	class Meta(object):
