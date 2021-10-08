@@ -1,116 +1,30 @@
-const leaderboard = document.getElementById("leaderboard");
-var scores = [
-  {
-    rank: 1,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-  {
-    rank: 2,
-    user_name: "udit berma",
-    index: 0.69,
-  },
-  {
-    rank: 3,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-  {
-    rank: 4,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-  {
-    rank: 5,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-  {
-    rank: 5,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-  {
-    rank: 5,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-  {
-    rank: 5,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-  {
-    rank: 5,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-  {
-    rank: 5,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-  {
-    rank: 5,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-  {
-    rank: 5,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-  {
-    rank: 5,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-  {
-    rank: 5,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-  {
-    rank: 5,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-  {
-    rank: 5,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-  {
-    rank: 5,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-  {
-    rank: 5,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-  {
-    rank: 5,
-    user_name: "ayush berma",
-    index: 0.69,
-  },
-];
+const leaderboard_container = document.getElementById("leaderboard");
 
-for (i = 0; i < scores.length; i++) {
-  var row = document.createElement("tr");
+function get_leaderboard(){
+  axios({
+    method: "get",
+    url: BASE_API_URL+"leaderboard/",
+    headers: {"Authorization":authorization}
+  })
+  .then(function(response){
+    for (var i = 0; i < response.data.length; i++) {
+      var row = document.createElement("tr");
 
-  var rank = document.createElement("td");
-  var user_name = document.createElement("td");
-  var index = document.createElement("td");
+      var rank = document.createElement("td");
+      var user_name = document.createElement("td");
+      var index = document.createElement("td");
 
-  rank.innerHTML = scores[i].rank;
-  user_name.innerHTML = scores[i].user_name;
-  index.innerHTML = scores[i].index;
+      rank.innerHTML = i+1;
+      user_name.innerHTML = response.data[i].user.username;
+      index.innerHTML = response.data[i].savings_index;
 
-  row.appendChild(rank);
-  row.appendChild(user_name);
-  row.appendChild(index);
+      row.appendChild(rank);
+      row.appendChild(user_name);
+      row.appendChild(index);
 
-  leaderboard.appendChild(row);
+      leaderboard_container.appendChild(row);
+    }
+  })
+  .catch(function(error){ delCookie('Authorization'); location.reload(); });
 }
+get_leaderboard();
