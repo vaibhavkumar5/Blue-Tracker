@@ -10,11 +10,11 @@ An online budget tracker. One stop for all your budget tracking needs We present
 The Intelligent Online Budget Tracker not only keeps track of the budget but also provides means to analyze data via charts and graphs . Maintain your monthly budget. Keep track of your expenses.
 
 The flow of the website is as follows 
-1. choose which skill you want to learn Frontend / backend / React
-2. Study the detailed roadmap 
-3. check the video resources for step by step guide 
-4. track your progress on "progress tracker"
-5. Refer the documentation for quick revision 
+1. Login using SAWO Labs
+2. Set goal and budget 
+3. Track expenses 
+4. Get a detailed view of your budget, spendings and savings
+5. Save more and hit your target to earn bluecoin (BLC) based on polygon and get them in your crypto wallet
 
 # Tech Stack Used
 
@@ -22,6 +22,9 @@ The flow of the website is as follows
 - CSS (design)
 - Bootstrap (CSS library)
 - JS DOM & jQuery (element manipulation and data insertion)
+- Django web framework for backend/database
+- rest framework for api
+- chart.js
 - SAWO Labs Api 
 - Solidity
 - Polygon Blockchain
@@ -29,26 +32,27 @@ The flow of the website is as follows
 # Installation
 
 > Workflow in terminal
-- Clone the git repository `git clone https://github.com/ayush02av/bluebots.git`
-- CD into project folder `cd bluebots`
+- Clone the git repository `git clone https://github.com/vaibhavkumar5/Blue-Tracker.git`
+- CD into project folder `cd Blue-Tracker`
 - Boot up VS Code `code .`
 - Start deployment server using `Live Server` extension in VS Code
 
-## App/Web link if hosted (recommended but optional)
+## Web link hosted
 
-[Link to the Bluebots Project website](https://bluetracker.herokuapp.com/login/ "BlueBots")
+[Link to the Bluebots Project website](https://bluetracker.herokuapp.com/login/ "BlueTracker")
 
 ## Video Demo
 
-[Link to the Video Demonstration of the BlueBots Website](https://drive.google.com/file/d/17CK1sKKSy6RjRmJ22WGyapVqQ6JMRkWM/view?usp=sharing "Video Demonstration")
+[Link to the Video Demonstration of the BlueTracker Website](https://drive.google.com/file/d/1GyxKwlqJo-OzesmdfIyf6msBuffL0Fhc/view?usp=drivesdk "Video Demonstration")
 
 ## Screenshots
-![](images/Screenshot%202021-09-05%20at%205.35.23%20PM.png)
-![](images/Screenshot%202021-09-05%20at%205.35.37%20PM.png)
-![](images/Screenshot%202021-09-05%20at%205.35.51%20PM.png)
-![](images/Screenshot%202021-09-05%20at%205.35.57%20PM.png)
-![](images/Screenshot%202021-09-05%20at%205.36.07%20PM.png)
-![](images/Screenshot%202021-09-05%20at%205.36.12%20PM.png)
-![](images/Screenshot%202021-09-05%20at%205.36.25%20PM.png)
-![](images/Screenshot%202021-09-05%20at%205.36.45%20PM.png)
+![](frontend/templates/static/images/Demo%201.jpeg)
+![](frontend/templates/static/images/demo2.jpeg)
+![](frontend/templates/static/images/demo3.jpeg)
+![](frontend/templates/static/images/demo4.jpeg)
+![](frontend/templates/static/images/demo5.jpeg)
+![](frontend/templates/static/images/demo6.jpeg)
+![](frontend/templates/static/images/demo7.jpeg)
+![](frontend/templates/static/images/demo8.jpeg)
+![](frontend/templates/static/images/demo%209.jpeg)
 
